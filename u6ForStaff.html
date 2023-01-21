@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <style type="text/css">
+th{
+  
+  font-size: 22px;
+}
+  td {
+    border-collapse: separate;
+    font-size: 15px;
+    border-radius: 20px;
+    color: rgb(7, 7, 7);
+    height: 30px;
+    text-align: center;
+  }
+input[type=text], select {
+      border: 0.1px solid black;
+      border-radius: 10px;
+      background-color: white;
+      height: 23px;
+    }
+    
+input[class="false"]{
+      color: white;
+      margin-top: 20px;
+      border: 0.1px solid rgb(255, 255, 255);
+      border-radius: 10px;
+      background-color: rgb(255, 19, 19);
+      height: 35px;
+      width: 140px;
+      cursor: pointer;
+}
+input[class="true"]{
+      color: white;
+      margin-top: 20px;
+      border: 0.1px solid rgb(255, 255, 255);
+      border-radius: 10px;
+      background-color: rgb(84, 199, 144);
+      height: 35px;
+      width: 140px;
+      cursor: pointer;
+      margin-left: 30px;
+}
+body {
+      font-family: 'Kanit', sans-serif;
+    }
+
+input[type=submit] {
+      background-color: rgb(255, 0, 0);
+      border-radius: 20px;
+      color: rgb(255, 255, 255);
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+
+
+
+.box{
+    padding-top: 20px;
+    margin-left: 36px;
+    margin-top: 40px;
+    background-color: #fff;
+    height: 800px;
+    text-align: center;
+    border-radius: 30px;
+    width: 1450px;
+ }
+
+.box2{
+  text-align: center;
+  background-color: rgb(193, 188, 188);
+  margin-top: 40px;
+  margin-left: 340px;
+  width: 800px;
+  height: 100%;
+  border-radius: 30px;
+}
+
+
+  </style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title></title>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="u6.css">
+
+    <title>ตรวจสอบความถูกต้อง</title>
+  <link rel="stylesheet" href="u1-attachFileCSS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <nav>
+      <div class="logoimg">
+        <img alt ="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/180px-Emblem_of_Thammasat_University.svg.png" width="50px" > 
+      </div>
+      <h0>ระบบแบบฟอร์มคำร้อง เพิ่ม - ถอนรายวิชาออนไลน์ ปีการศึกษา 2565</h0>
+      <ul>
+        <li><a href="u6ForStaff.html">ตรวจสอบความถูกต้อง</a></li>
+            <li><a href="U8HTMLFileForStaff.html">ส่งต่อคำร้องให้ผู้เกี่ยวข้อง</a></li>
+            <li><a href="uuu7_staffSide.html">ประวัติการใช้งานระบบ</a></li>
+            <li><a href="login.php">ออกจากระบบ</a></li>
+      </ul>
+      <br>
+    </nav>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>คำร้องเพิ่ม - ถอนรายวิชา</h1>
+    </div>
+    <div class="box">
+      <h2>ข้อมูลส่วนตัว</h2>
+        <form id = "receiveDataForm" >
+            <!-- <div class="subheader" class="col10-20" class="fitcontainer" style="font-size: 20px;"> -->
+              <th><select name="nametitle" id="nametitleOutput" style="background-color: rgb(245, 245, 245); height: 23px">
+                <option value="mr" width="10%">นาย</option>
+                <option value="mrs" width="10%">นาง</option>
+                <option value="miss" width="10%">นางสาว</option>
+          </select>
+  
+          <label for="name">ชื่อ-นามสกุล*</label>
+          <input id="nameO" type="text" value="" name="name" style="background-color: rgb(245, 245, 245); width: 28.6%; height: 23px"> <br>
+  
+          <label for="id">เลขทะเบียนนักศึกษา*</label>
+          <input id="idO" type="text" value="" name="id" style="background-color: rgb(245, 245, 245); width: 20%; height: 23px">
+  
+          <label for="classyear">ชั้นปีที่*</label>
+          <th><select name="classyear" id="classyearO" value="classyear" style="background-color: rgb(245, 245, 245); width: 3.6%; height: 23px">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select></th><br>
+  
+          <label for="major">สาขาวิชา*</label>
+          <th><select name="major" id="majorO" value="major" style="background-color: rgb(245, 245, 245); width: 37.2%; height: 23px">
+            <option value="math">คณิตศาสตร์และสถิติ</option>
+            <option value="chem">เคมี</option>
+            <option value="agriculture">เทคโนโลยีการเกษตร</option>
+            <option value="sustain">เทคโนโลยีเพื่อการพัฒนาและยั่งยืน</option>
+            <option value="biotech">เทคโนโลยีชีวภาพ</option>
+            <option value="phy">ฟิสิกส์</option>
+            <option value="comsci">วิทยาการคอมพิวเตอร์</option>
+            <option value="foodsci">วิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+            <option value="textile">วิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+            <option value="envi">วิทยาศาสตร์สิ่งแวดล้อม</option>
+          </select></th> <br>
+  
+          <label for="house">ที่อยู่*</label>
+          <th><input type="text" id="houseO" style="background-color: rgb(245, 245, 245); width: 40.5%; height: 23px"></th> <br>
+  
+          <label for="subarea">ตำบล*</tlabel>
+          <th><input type="text" id="subareaO" name="subarea" style="background-color: rgb(245, 245, 245); width: 15.8%; height: 23px"></th>
+  
+          <label for="area">อำเภอ*</label>
+          <th><input type="text" id="areaO" name="area" style="background-color: rgb(245, 245, 245); width: 18%; height: 23px"></th> <br>
+  
+          <label for="province">จังหวัด*</label>
+          <th><input type="text" id="provinceO" name="province" style="background-color: rgb(245, 245, 245); width: 20%; height: 23px"></th>
+  
+          <label for="post">รหัสไปรษณีย์*</label>
+          <th><input type="text" id="postO" name="post" style="background-color: rgb(245, 245, 245); width: 8%; height: 23px"></th> <br>
+  
+          <label for="phone">โทรศัพท์มือถือ*</label>
+          <th><input type="text" id="phoneO" name="phone" style="background-color: rgb(245, 245, 245); width: 10%; height: 23px"></th>   
+  
+          <label for="tel">โทรศัพท์บ้าน (ถ้ามี)</label>
+          <th><input type="text" id="telO" name="tel" style="background-color: rgb(245, 245, 245); width: 10%; height: 23px"></th> <br>
+  
+          <label for="professor">อาจารย์ที่ปรึกษา*</label>
+          <th><input type="text" id="professorO" name="professor" style="background-color: rgb(245, 245, 245); width: 32.7%; height: 23px"></th>
+        </form>
+        <div class = "box2">
+        
+        <center>
+          <table class="tableAdd" width="500px" >
+            <tr >
+                <th>รายการเพิ่มรายวิชา</th>
+            </tr>
+            <tbody id="myTable"style="background-color: white;">
+                
+            </tbody>
+          </table>
+        </center>
+        <center>
+          <table class="tableAdd1" width="500px" >
+            <tr >
+                <th>รายการถอนรายวิชา</th>
+            </tr>
+            <tbody id="myTable2"style="background-color: white;">
+                
+            </tbody>
+          </table>
+        </center>
+        <h2> </h2>
+        </div>
+        <a href="u5-complain.html"><input type="button"  class="false" value="ข้อมูลผิดพลาดต้องแก้ไข"></a>
+        
+        <a href="U8HTMLFileForStaff.html"><input type="button"  class="true" value="ข้อมูลถูกต้อง"></a>
+       
+    </div>
+    
+  </body>
+  <script src="U6_controller.js"> </script>
+    <script>
+      const name = document.getElementById('nameO');
+      const nameTitle = document.getElementById('nametitleOutput');
+      const studentID = document.getElementById('idO');
+      const year = document.getElementById('classyearO');
+      const major = document.getElementById('majorO');
+      const address = document.getElementById('houseO');
+      const tumbon = document.getElementById('subareaO');
+      const subProvince = document.getElementById('areaO');
+      const province = document.getElementById('provinceO');
+      const postNumber = document.getElementById('postO');
+      const phoneNumber = document.getElementById('phoneO');
+      const phoneNumber2 = document.getElementById('telO');
+      const adviser = document.getElementById('professorO');
+
+      const obj = JSON.parse(localStorage.getItem('personalData'));
+
+      nameTitle.value = obj.title;
+      name.value = obj.name;
+      studentID.value = obj.studentID;
+      year.value = obj.year;
+      major.value = obj.major;
+      address.value = obj.address;
+      tumbon.value = obj.tumbon;
+      subProvince.value = obj.subProvince;
+      province.value = obj.province;
+      postNumber.value = obj.postNumber;
+      phoneNumber.value = obj.phoneNumber;
+      phoneNumber2.value = obj.phoneNumber2;
+      adviser.value = obj.adviser;
+      const addSubject1 = JSON.parse(localStorage.getItem('addSubject1'));
+      const addSubject2 = JSON.parse(localStorage.getItem('addSubject2'));
+
+      const deleteSubject1 = JSON.parse(localStorage.getItem('deleteSubject1'));
+      const deleteSubject2 = JSON.parse(localStorage.getItem('deleteSubject2'));
+      if(addSubject1.order==1){
+      buildTable(addSubject1);
+      }
+      if(addSubject2.order==2){
+      buildTable(addSubject2);
+      }
+      function buildTable(addSubject){
+		var table = document.getElementById('myTable')
+
+			var row = `<tr>
+							<td><input type="checkbox" value=""${addSubject.teacherApprove}> การอนุญาตจากผู้สอน     รหัสวิชา "${addSubject.subjectCode}"</td>	
+					  </tr>`
+			table.innerHTML += row
+
+	}
+ if(deleteSubject1.order==1){
+  buildTable2(deleteSubject1);
+}
+if(deleteSubject2.order==2){
+  buildTable2(deleteSubject2);
+}
+      function buildTable2(deleteSubject){
+		var table = document.getElementById('myTable2')
+
+			var row = `<tr>
+							<td><input type="checkbox" value=""${deleteSubject.teacherApprove}> การอนุญาตจากผู้สอน     รหัสวิชา "${deleteSubject.subjectCode}"</td>	
+					  </tr>`
+			table.innerHTML += row
+}
+    </script>
+</html>

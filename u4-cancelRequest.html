@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>ยกเลิกคำร้อง</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="u4-cancelRequestCSS.css" />
+  
+    <link rel="stylesheet" href="u1-attachFileCSS.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+  <nav>
+    <div class="logoimg">
+      <img alt="logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/180px-Emblem_of_Thammasat_University.svg.png"
+        width="50px" />
+    </div>
+    <h0>ระบบแบบฟอร์มคำร้อง เพิ่ม - ถอนรายวิชาออนไลน์ ปีการศึกษา 2565</h0>
+   
+    <ul>
+      <li><a href="u5-complain.html">เขียนคำร้อง</a></li>
+      <li><a href="u1-attachFile.html">แนบเอกสาร</a></li>
+      <li><a href="u3-checkStatus.html">ติดตามสถานะคำร้อง</a></li>
+      <li><a href="u4-cancelRequest.html">ยกเลิกคำร้อง</a></li>
+      <li><a href="uuu7.html">ประวัติการใช้งานระบบ</a></li>
+    </li>
+    <li>
+      <div class="dropdowns-wrapper">
+        <div class="dropdown-container">
+          <div class="notifications dropdown dd-trigger" ng-click="showNotifications($event)">
+            <span class="count animated" id="notifications-count">{{awaitingNotifications}}</span>
+            <span class="fa fa-bell"></span>
+          </div>
+          <div class="dropdown-menu animated" id="notification-dropdown">
+            <div class="dropdown-header">
+              <span class="triangle"></span>
+              <span class="heading">Notifications</span>
+              <span class="count" id="dd-notifications-count">{{newNotifications.length}}</span>
+            </div>
+            <div class="dropdown-body">
+              <div class="notification new" ng-repeat="notification in newNotifications.slice().reverse() track by notification.timestamp">
+                <div class="notification-image-wrapper">
+                  <div class="notification-image">
+                  </div>
+                </div>
+                <div class="notification-text">
+                   <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
+                </div>
+              </div>
+              <div class="notification" ng-repeat="notification in readNotifications.slice().reverse() track by $index">
+                <div class="notification-image-wrapper">
+                  <div class="notification-image">
+                  </div>
+                </div>
+                <div class="notification-text">
+                   <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <div class="messages dropdown">
+            <span class="fa fa-envelope-o"></span>
+          </div>
+        </div>
+      </div>
+    </li>
+      <li><a href="login.php">ออกจากระบบ</a></li>
+    </ul>
+    <br />
+  </div>
+  </nav>
+</head>
+  <body>
+    <div class="container">
+      <h1>ยกเลิกคำร้อง</h1>
+    </div>
+    
+    <div class="box">
+      <div class="title">
+        <p>รายการคำร้องที่สามารถยกเลิกได้</p>
+      </div>
+
+      <div class="info">
+        <img class="listicon" src="u4-listicon.png">
+        <input class="cancelreqbutton" type="image" src="u4-cancelreqbutton.png"/>
+        <p>คำร้อง เพิ่ม-ถอนรายวิชา</p>
+        <p>ยื่นคำร้องเมื่อวันที่ 1 ตุลาคม 2565</p>
+      </div>
+
+      <div class="info">
+        <img class="listicon" src="u4-listicon.png">
+        <input class="cancelreqbutton" type="image" src="u4-cancelreqbutton.png"/>
+        <p>คำร้อง เพิ่ม-ถอนรายวิชา</p>
+        <p>ยื่นคำร้องเมื่อวันที่ 3 ตุลาคม 2565</p>
+      </div>
+
+      <div class="timebox">
+        <img src="u4-tick.png">
+        <p>สถานะคำร้อง ณ วันที่ <span id="time"></span></p>
+      </div>
+    </div>
+
+    <script>
+        var datetime = new Date().toLocaleString('en-US', {hour12: false,});
+        document.getElementById("time").textContent = datetime;
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.js'></script><script  src="./script.js"></script>
+  </body>
+</html>

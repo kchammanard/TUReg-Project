@@ -1,0 +1,466 @@
+<!doctype html>
+<html>
+<style>
+  th,
+  td {
+    border-collapse: separate;
+    font-size: 15px;
+    border-radius: 20px;
+    color: white;
+  }
+
+  /* tr:nth-child(even) {
+    background-color: #ffffff;
+  } */
+
+  body {
+    background-color: rgba(217, 216, 216, 0.404);
+  }
+
+  /* th,
+  td {
+    padding: 5px;
+  } */
+
+  .buttonAW {
+      background-color: #ffffff;
+      border: 0px solid rgba(217, 216, 216, 0.404);
+      color: gray;
+      text-align: center;
+      border-radius: 15px;
+      width: 40px;
+      height: 30px;
+    }
+    input[type=text], input[type=button], select {
+      border: 0.1px solid black;
+      border-radius: 10px;
+      background-color: white;
+      height: 23px;
+    }
+    
+    announce {
+      font-size: 17px;
+      color: red;
+      /* text-align: center; */
+    }
+   .subheader {
+    background-color: rgb(255, 255, 255);
+    /* padding: 35px; */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    vertical-align: top;
+}
+/* .fitcontainer {
+  width: 70px;
+  height: 70px;
+  object-fit: fill;
+} */
+</style>
+
+<head>
+  <script src="u5-complain.js"></script>
+  <title>เขียนคำร้อง</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="u5-complain.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Kanit|Prompt"
+    rel="stylesheet">
+  <style type="text/css">
+    body {
+      font-family: 'Kanit', sans-serif;
+    }
+    input[type=submit] {
+      background-color: rgb(255, 0, 0);
+      border-radius: 20px;
+      color: rgb(255, 255, 255);
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    header {
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+    main {
+    float: none;
+    padding: 100px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-left: 50px;
+}
+
+  inside {
+    float: left;
+    padding: 50px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(217, 216, 216, 0.404);
+    border-radius: 20px;
+  }
+  /* fit {
+    resize: vertical;
+    overflow: auto;
+  } */
+  </style>
+
+  <!-- <nav>
+      <div class="logoimg">
+        <img alt ="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/180px-Emblem_of_Thammasat_University.svg.png" width="50px" > 
+      </div>
+      <h0>ระบบแบบฟอร์มคำร้อง เพิ่ม - ถอนรายวิชาออนไลน์ ปีการศึกษา 2565</h0>
+      <ul>
+        <li><a href="u5-complain.html">เขียนคำร้อง</a></li>
+          <li><a href="u1-attachFile.html">แนบเอกสาร</a></li>
+          <li><a href="U8HTMLFile.html">ติดตามสถานะคำร้อง</a></li>
+          <li><a href="u4-cancelRequest.html">ยกเลิกคำร้อง</a></li>
+          <li><a href="uuu7.html">ประวัติการใช้งานระบบ</a></li>
+          <li><a href="u3-checkStatus.html"><img alt ="bell" src="https://i.pinimg.com/564x/1c/81/1a/1c811a1e7ed49a1a4f2bbfeaba703f1f.jpg" width="20px" height="20px"></a></li>
+          <li><a href="login.php">ออกจากระบบ</a></li>
+      </ul>
+      <br>
+    </nav>
+</head> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+  <nav>
+    <div class="logoimg">
+      <img alt="logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/180px-Emblem_of_Thammasat_University.svg.png"
+        width="50px" />
+    </div>
+    <h0>ระบบแบบฟอร์มคำร้อง เพิ่ม - ถอนรายวิชาออนไลน์ ปีการศึกษา 2565</h0>
+    <div ng-app="demoApp" class="ng-app">
+      <div class="wrapper" ng-controller="demoController">
+        <div class="nav-bar">
+    <ul>
+      <li><a href="u5-complain.html">เขียนคำร้อง</a></li>
+      <li><a href="u1-attachFile.html">แนบเอกสาร</a></li>
+      <li><a href="u3-checkStatus.html">ติดตามสถานะคำร้อง</a></li>
+      <li><a href="#">ยกเลิกคำร้อง</a></li>
+      <li><a href="#">ประวัติการใช้งานระบบ</a></li>
+    </li>
+    <li>
+      <div class="dropdowns-wrapper">
+        <div class="dropdown-container">
+          <div class="notifications dropdown dd-trigger" ng-click="showNotifications($event)">
+            <span class="count animated" id="notifications-count">{{awaitingNotifications}}</span>
+            <span class="fa fa-bell"></span>
+          </div>
+          <div class="dropdown-menu animated" id="notification-dropdown">
+            <div class="dropdown-header">
+              <span class="triangle"></span>
+              <span class="heading">Notifications</span>
+              <span class="count" id="dd-notifications-count">{{newNotifications.length}}</span>
+            </div>
+            <div class="dropdown-body">
+              <div class="notification new" ng-repeat="notification in newNotifications.slice().reverse() track by notification.timestamp">
+                <div class="notification-image-wrapper">
+                  <div class="notification-image">
+                  </div>
+                </div>
+                <div class="notification-text">
+                   <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
+                </div>
+              </div>
+              <div class="notification" ng-repeat="notification in readNotifications.slice().reverse() track by $index">
+                <div class="notification-image-wrapper">
+                  <div class="notification-image">
+                  </div>
+                </div>
+                <div class="notification-text">
+                   <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <div class="messages dropdown">
+            <span class="fa fa-envelope-o"></span>
+          </div>
+        </div>
+      </div>
+    </li>
+      <li><a href="index.html">ออกจากระบบ</a></li>
+    </ul>
+    <br />
+  </div>
+  </nav>
+</head>
+
+
+
+<body>
+  <div class="container">
+    <h1>คำร้องเพิ่ม - ถอนรายวิชา</h1>
+  </div>
+  <br>
+    <announce style="margin-left: 500px;">*สามารถทำการเพิ่ม - ถอนรายวิชาได้ตั้งแต่วันที่ 8 สิงหาคม 2565 - 9 กันยายน 2565</announce>
+    <br>
+    <announce style="margin-left: 550px;">และสามารถทำการเพิ่ม-ถอนรายวิชา (ติด W) ถึงวันที่ 31 ตุลาคม 2565*</announce>
+  <br>
+  <fit>
+    <main>
+      <div align="right" display: inline-block>
+        <form action="/action_page.php">
+          <input type="date" id="date" name="date" value="date">
+        </form>
+      </div>
+      <center>
+      <h2>ข้อมูลส่วนตัว</h2>
+      <form  id = "dataForm" action="u6.html">
+        <section>
+          <!-- <div class="subheader" class="col10-20" class="fitcontainer" style="font-size: 20px;"> -->
+            <th><select name="nametitle" id="nametitle" style="background-color: rgb(245, 245, 245); height: 23px">
+              <option value="mr" width="10%">นาย</option>
+              <option value="mrs" width="10%">นาง</option>
+              <option value="miss" width="10%">นางสาว</option>
+        </select>
+
+        <label for="name">ชื่อ-นามสกุล*</label>
+        <input id="name" type="text" value="" name="name" style="background-color: rgb(245, 245, 245); width: 28.6%; height: 23px"> <br>
+
+        <label for="id">เลขทะเบียนนักศึกษา*</label>
+        <input id="id" type="text" value="" name="id" style="background-color: rgb(245, 245, 245); width: 20%; height: 23px">
+
+        <label for="classyear">ชั้นปีที่*</label>
+        <th><select name="classyear" id="classyear" value="classyear" style="background-color: rgb(245, 245, 245); width: 3.6%; height: 23px">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select></th><br>
+
+        <label for="major">สาขาวิชา*</label>
+        <th><select name="major" id="major" value="major" style="background-color: rgb(245, 245, 245); width: 37.2%; height: 23px">
+          <option value="math">คณิตศาสตร์และสถิติ</option>
+          <option value="chem">เคมี</option>
+          <option value="agriculture">เทคโนโลยีการเกษตร</option>
+          <option value="sustain">เทคโนโลยีเพื่อการพัฒนาและยั่งยืน</option>
+          <option value="biotech">เทคโนโลยีชีวภาพ</option>
+          <option value="phy">ฟิสิกส์</option>
+          <option value="comsci">วิทยาการคอมพิวเตอร์</option>
+          <option value="foodsci">วิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+          <option value="textile">วิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+          <option value="envi">วิทยาศาสตร์สิ่งแวดล้อม</option>
+        </select></th> <br>
+
+        <label for="house">ที่อยู่*</label>
+        <th><input type="text" id="house" style="background-color: rgb(245, 245, 245); width: 40.5%; height: 23px"></th> <br>
+
+        <label for="subarea">ตำบล*</tlabel>
+        <th><input type="text" id="subarea" name="subarea" style="background-color: rgb(245, 245, 245); width: 15.8%; height: 23px"></th>
+
+        <label for="area">อำเภอ*</label>
+        <th><input type="text" id="area" name="area" style="background-color: rgb(245, 245, 245); width: 18%; height: 23px"></th> <br>
+
+        <label for="province">จังหวัด*</label>
+        <th><input type="text" id="province" name="province" style="background-color: rgb(245, 245, 245); width: 20%; height: 23px"></th>
+
+        <label for="post">รหัสไปรษณีย์*</label>
+        <th><input type="text" id="post" name="post" style="background-color: rgb(245, 245, 245); width: 8%; height: 23px"></th> <br>
+
+        <label for="phone">โทรศัพท์มือถือ*</label>
+        <th><input type="text" id="phone" name="phone" style="background-color: rgb(245, 245, 245); width: 10%; height: 23px"></th>   
+
+        <label for="tel">โทรศัพท์บ้าน (ถ้ามี)</label>
+        <th><input type="text" id="tel" name="tel" style="background-color: rgb(245, 245, 245); width: 10%; height: 23px"></th> <br>
+
+        <label for="professor">อาจารย์ที่ปรึกษา*</label>
+        <th><input type="text" id="professor" name="professor" style="background-color: rgb(245, 245, 245); width: 32.7%; height: 23px"></th>
+      </center>
+    </fit>
+    <br><br>
+    <inside>
+      <center><h3>รายการการเพิ่มรายวิชา</h3></center>
+        <table class="center" id="addTable" width="100%" />
+          <tr style="background-color: red;">
+            <th>ลำดับ</th>
+            <th>รหัสวิชา</th>
+            <th>ชื่อวิชา</th>
+            <th>section</th>
+            <th>วัน/เวลา</th>
+            <th>หน่วยกิต</th>
+            <th>ชื่อผู้สอน</th>
+            <th>ผู้สอนอนุญาต</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="addcolumn10" name="order"></td>
+            <td><input type="text" id="addcolumn11" name="codesub" value=""></td>
+            <td><input type="text" id="addcolumn12" name="sub" value=""></td>
+            <td><input type="text" id="addcolumn13" name="sec" value=""></td>
+            <td><input type="text" id="addcolumn14" name="time" value=""></td>
+            <td><input type="number" id="addcolumn15" name="credit" value="0"></td>
+            <td><input type="text" id="addcolumn16" name="prof" value=""></td>
+            <td><input type="checkbox" id="addcolumn17" name="permission"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="addcolumn20" name="order"></td>
+            <td><input type="text" id="addcolumn21" name="codesub" value=""></td>
+            <td><input type="text" id="addcolumn22" name="sub" value=""></td>
+            <td><input type="text" id="addcolumn23" name="sec" value=""></td>
+            <td><input type="text" id="addcolumn24" name="time" value=""></td>
+            <td><input type="number" id="addcolumn25" name="credit" value="0"></td>
+            <td><input type="text" id="addcolumn26" name="prof" value=""></td>
+            <td><input type="checkbox" id="addcolumn27" name="permission"></td>
+          </tr>
+          
+        </table>
+            
+        <center>
+          <input type="button" class="buttonAW" onclick="addTable('addTable')" value="+">
+          <input type="button" class="buttonAW" onclick="deleteTable('addTable')" value="-">
+        </center>
+        <br>
+        <center><h3>รายการการถอนรายวิชา</h3></center>
+        <table class="center" id="deleteTable" width="100%">
+          <tr style="background-color: red;">
+            <th>ลำดับ</th>
+            <th>รหัสวิชา</th>
+            <th>ชื่อวิชา</th>
+            <th>section</th>
+            <th>วัน/เวลา</th>
+            <th>หน่วยกิต</th>
+            <th>ชื่อผู้สอน</th>
+            <th>ผู้สอนอนุญาต</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="delcolumn10" name="order"></td>
+            <td><input type="text" id="delcolumn11" name="codesub"></td>
+            <td><input type="text" id="delcolumn12" name="sub"></td>
+            <td><input type="text" id="delcolumn13" name="sec"></td>
+            <td><input type="text" id="delcolumn14" name="time"></td>
+            <td><input type="number" id="delcolumn15" name="credit" value="0"></td>
+            <td><input type="text" id="delcolumn16" name="prof"></td>
+            <td><input type="checkbox" id="delcolumn17" name="permission"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="delcolumn20" name="order" ></td>
+            <td><input type="text" id="delcolumn21" name="codesub"></td>
+            <td><input type="text" id="delcolumn22" name="sub"></td>
+            <td><input type="text" id="delcolumn23" name="sec"></td>
+            <td><input type="text" id="delcolumn24" name="time"></td>
+            <td><input type="number" id="delcolumn25" name="credit" value="0"></td>
+            <td><input type="text" id="delcolumn26" name="prof"></td>
+            <td><input type="checkbox" id="delcolumn27" name="permission"></td>
+          </tr>
+        </table>
+          <center>
+            <input type="button" class="buttonAW" onclick="addTable('deleteTable')" value="+">
+            <input type="button" class="buttonAW" onclick="deleteTable('deleteTable')" value="-">
+          </center>
+          <br>
+          <label><b>เหตุผลที่ขอเพิ่ม-ถอนรายวิชา*</b></label>
+          <br>
+          <textarea type="text" id="reason" name="reason" cols="100%" rows="5" style="width:100%"></textarea>
+          </inside>
+          <br>
+        </section>
+        <center>
+          <input id="btn"type="submit" value="submit">
+          <br><br>
+        </center>
+      </form>
+    
+    <br>
+    <script>
+      //personal Date
+      const form = document.getElementById('dataForm');
+      const nameTitle = document.getElementById('nametitle');
+      const name = document.getElementById('name');
+      const studentID = document.getElementById('id');
+      const year = document.getElementById('classyear');
+      const major = document.getElementById('major');
+      const address = document.getElementById('house');
+      const tumbon = document.getElementById('subarea');
+      const subProvince = document.getElementById('area');
+      const province = document.getElementById('province');
+      const postNumber = document.getElementById('post');
+      const phoneNumber = document.getElementById('phone');
+      const phoneNumber2 = document.getElementById('tel');
+      const Adviser = document.getElementById('professor');
+      const timeVal = document.getElementById('day');
+      const processVal = "กำลังดำเนินการ";
+      
+      if (e) {
+      form.addEventListener('submit', function (e){
+        e.preventDefault();
+      const nameTitleValue = nameTitle.value;
+      const nameValue = name.value;
+      const studentIDValue = studentID.value;
+      const yearValue = year.value;
+      const majorValue = major.value;
+      const addressValue = address.value;
+      const tumbonValue = tumbon.value;
+      const subProvinceValue = subProvince.value;
+      const provinceValue = province.value;
+      const postNumberValue = postNumber.value;
+      const phoneNumberValue = phoneNumber.value;
+      const phoneNumber2Value = phoneNumber2.value;
+      const AdviserValue = Adviser.value;
+      const processValue = processVal;
+      const order = [];
+      const subjectCode = [];
+      const subjectName = [];
+      const teacherApprove = [];
+      const delorder = [];
+      const delsubjectCode = [];
+      const delsubjectName = [];
+      const delteacherApprove = [];
+      for (var i = 1; i < document.getElementById('addTable').rows.length; i++) {
+        order[i] = document.getElementById(`addcolumn${i}0`);
+        subjectCode[i] = document.getElementById(`addcolumn${i}1`);
+        subjectName[i] = document.getElementById(`addcolumn${i}2`);
+        teacherApprove[i] = document.getElementById(`addcolumn${i}7`);
+      }
+      for (var i = 1; i < document.getElementById('deleteTable').rows.length; i++) {
+        delorder[i] = document.getElementById(`delcolumn${i}0`);
+        delsubjectCode[i] = document.getElementById(`delcolumn${i}1`);
+        delsubjectName[i] = document.getElementById(`delcolumn${i}2`);
+        delteacherApprove[i] = document.getElementById(`delcolumn${i}7`);
+      }
+      localStorage.setItem('personalData', JSON.stringify({title : nameTitleValue, name: nameValue, studentID: studentIDValue,
+      year: yearValue, major: majorValue, address: addressValue, tumbon: tumbonValue, subProvince: subProvinceValue,
+      province: provinceValue, postNumber: postNumberValue, phoneNumber: phoneNumberValue, phoneNumber2 : phoneNumber2Value,
+      adviser : AdviserValue}));
+
+      for (let i = 1; i < document.getElementById('addTable').rows.length; i++) {
+        let orderValue = order[i]?.value;
+        let subjectCodeValue = subjectCode[i]?.value;
+        let teacherApproveValue = teacherApprove[i]?.value;
+        let subjectNameValue = subjectName[i]?.value;
+        localStorage.setItem(`addSubject${i}`,JSON.stringify({order: orderValue, subjectCode: subjectCodeValue,teacherApprove : teacherApproveValue, subjectName: subjectNameValue,status : processVal}))
+      }
+      
+      for (let i = 1; i < document.getElementById('deleteTable').rows.length; i++) {
+        let delorderValue = delorder[i]?.value;
+        let delsubjectCodeValue = delsubjectCode[i]?.value;
+        let delteacherApproveValue = delteacherApprove[i]?.value;
+        let delsubjectNameValue = delsubjectName[i]?.value;
+        localStorage.setItem(`delSubject${i}`,JSON.stringify({order: delorderValue, subjectCode: delsubjectCodeValue,teacherApprove : delteacherApproveValue, subjectName: delsubjectNameValue,status : processVal}))
+      }
+
+      window.location.href = "u6.html"
+
+      });
+    }
+  </script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.js'></script><script  src="./script.js"></script>
+  </body>
+</html>

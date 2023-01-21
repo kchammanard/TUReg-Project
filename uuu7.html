@@ -1,0 +1,228 @@
+<!DOCTYPE html> <!--html:5-->
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="u1-attachFileCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- month input -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติการใช้งาน</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    @import 'https://fonts.googleapis.com/css?family=Kanit|Prompt'; 
+
+    
+    .fixHref {
+        left: 740px;
+    }
+    .fixHead {
+        left: 120px;
+    }
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav {
+    width: 1550px;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: inherit;
+    min-height: fit-content;
+}
+.logoimg{
+    align-items: center;
+    min-height: fit-content;
+    margin: 24px;
+    margin-top: 16px;
+  }
+nav ul{
+    display: flex;
+    margin-top: 32px;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    justify-content: flex-end;
+    text-decoration: none;
+    color:#2e2e2e;
+    padding: 10px 10px;
+    transition: .3s ease;
+}
+nav ul li a:hover{
+    color:#F53838;
+    text-decoration: none;
+  }
+h0{
+    margin-top: 32px;
+    margin-right: 202px;
+}
+.container {
+    height: 50px;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0px 0px  60px 60px;
+    background: #fff;
+    border-style: none;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+    width: 1540px;
+  }
+  .container_1 {
+    height: 50px;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0px 0px  60px 60px;
+    background: #fff;
+    border-style: none;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+    width: 1540px;
+  }
+  body{
+  background: rgba(217, 216, 216, 0.404);
+}
+    th {
+        background-color: #F53838;
+        border-radius: 7px 7px 0px 0px;
+        color: #ffffff;
+        width: 100px;
+    }
+    td {
+        background-color: #ffffff;
+        /* border-radius: 0px 0px 7px 7px; */
+        color: black;
+    }
+    table {
+        text-align: center;
+        border-spacing: 10px 0px;
+        border-collapse: separate;
+        border-width: 100px;
+        padding: 7px;
+        border-radius: 8px;
+    }
+    .b {
+        border-radius: 0px 0px 7px 7px;
+    }
+    .button {
+        font-family: 'Kanit',sans-serif;
+        background-color: #F53838;
+        color: #ffffff;
+        border-radius: 7px;
+        border-color: #F53838;
+        width: 100px;
+    }
+    .form-control {
+        font-family: 'Kanit',sans-serif;
+    }
+    </style>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+  <nav>
+    <div class="logoimg">
+      <img alt="logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Emblem_of_Thammasat_University.svg/180px-Emblem_of_Thammasat_University.svg.png"
+        width="50px" />
+    </div>
+    <h0>ระบบแบบฟอร์มคำร้อง เพิ่ม - ถอนรายวิชาออนไลน์ ปีการศึกษา 2565</h0>
+
+    <ul>
+      <li><a href="u5-complain.html">เขียนคำร้อง</a></li>
+      <li><a href="u1-attachFile.html">แนบเอกสาร</a></li>
+      <li><a href="u3-checkStatus.html">ติดตามสถานะคำร้อง</a></li>
+      <li><a href="u4-cancelRequest.html">ยกเลิกคำร้อง</a></li>
+      <li><a href="uuu7.html">ประวัติการใช้งานระบบ</a></li>
+    </li>
+    <li>
+      <div class="dropdowns-wrapper">
+        <div class="dropdown-container">
+          <div class="notifications dropdown dd-trigger" ng-click="showNotifications($event)">
+            <span class="count animated" id="notifications-count">{{awaitingNotifications}}</span>
+            <span class="fa fa-bell"></span>
+          </div>
+          <div class="dropdown-menu animated" id="notification-dropdown">
+            <div class="dropdown-header">
+              <span class="triangle"></span>
+              <span class="heading">Notifications</span>
+              <span class="count" id="dd-notifications-count">{{newNotifications.length}}</span>
+            </div>
+            <div class="dropdown-body">
+              <div class="notification new" ng-repeat="notification in newNotifications.slice().reverse() track by notification.timestamp">
+                <div class="notification-image-wrapper">
+                  <div class="notification-image">
+                  </div>
+                </div>
+                <div class="notification-text">
+                   <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
+                </div>
+              </div>
+              <div class="notification" ng-repeat="notification in readNotifications.slice().reverse() track by $index">
+                <div class="notification-image-wrapper">
+                  <div class="notification-image">
+                  </div>
+                </div>
+                <div class="notification-text">
+                   <span class="highlight">{{notification.user.name}}</span> {{notification.action}} {{notification.target}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <div class="messages dropdown">
+            <span class="fa fa-envelope-o"></span>
+          </div>
+        </div>
+      </div>
+    </li>
+      <li><a href="login.php">ออกจากระบบ</a></li>
+    </ul>
+    <br />
+  </div>
+  </nav>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+
+    <div class="container_1">
+        <h3>นางสาวบริทนีย์  สเปียร์  6400000001</h3>
+    </div>
+
+    <div><center>
+        <br><input type="text" class="form-control" name="datepicker" id="datepicker" style="width: 300px; height: 30px;" placeholder="เดือน ปี"/>
+    </div></center>
+
+    <div><center>
+            <button class="button" type="submit" value="Submit" onclick="location.href='uuu7_studentSide.html';">ค้นหา
+    </div></center>
+
+
+    <script>
+        $("#datepicker").datepicker( {
+            format: "mm-yyyy",
+            startView: "months", 
+            minViewMode: "months"
+        });
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.js'></script><script  src="./script.js"></script>
+</body>
+</html>
